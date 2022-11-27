@@ -1,5 +1,5 @@
 export default function Letras(props) {
-console.log(props)
+
 const letras = props.letra
     return(
         <div className="letter-container">
