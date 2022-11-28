@@ -36,6 +36,7 @@ function App() {
 				setErrors={setErrors}
 				img={`forca${errors}`}
 				selected={selected}
+				setSelected={setSelected}
         displayedWord={displayedWord}
         setDisplayedWord={setDisplayedWord}
 		gameWon={gameWon}

@@ -10,14 +10,14 @@ export default function Letras(props) {
 	const spltWord = word ? word.split("") : [];
 	const underlined = spltWord.map(() => "_ ");
 	const endGame = props.endGame;
-
+	
 	console.log(underlined)
 
 	function selectedLetters(selectedLetter) {
 		
 		if (!selected.includes(selectedLetter)) {
+			selected.push(selectedLetter);
 			if(spltWord.includes(selectedLetter)){
-				selected.push(selectedLetter);
 				// debugger;
 				for (let i = 0; i < selected.length; i++) {
 					spltWord.forEach(function(item, index) { if (item === selected[i]) underlined[index] = selected[i];});
