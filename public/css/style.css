@@ -1,0 +1,156 @@
+* {
+	box-sizing: border-box;
+}
+
+.game-container {
+	display: flex;
+	margin: 35px 35px 35px 35px;
+}
+
+.main-image {
+	margin: 0 0 0 0;
+	height: 25vw;
+}
+
+.start-button {
+	right: 35px;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 200px;
+	height: 60px;
+
+	background: #27ae60;
+	border-radius: 8px;
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 23px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	border: none;
+	outline: none;
+	color: #ffffff;
+}
+
+.word-display {
+  position: absolute;
+	max-width: 65vw;
+	height: 68px;
+  top: 35vh;
+  right: 35px;
+  margin-left: 0;
+
+	font-family: "Noto Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 50px;
+	line-height: 68px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
+.letter-container {
+	display: flex;
+  position: absolute;
+  flex-wrap: wrap;
+	margin-top: 5px;
+	left: 15%;
+	right: 15%;
+	min-height: 92px;
+	width: calc(100% - 30%);
+
+}
+
+.won {
+	color: #27ae60;
+}
+
+.lost {
+	color: #ff0000;
+}
+
+.letter-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	width: 40px;
+	height: 40px;
+  margin: 6px 6px 6px 6px;
+
+	background: #e1ecf4;
+	border: 1px solid #7aa7c7;
+	border-radius: 3px;
+
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 19px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+
+	color: #39739d;
+}
+
+.selected {
+	background: #9faab5;
+	color: #798a9f;
+}
+
+:disabled {
+	background: #9faab5;
+	color: #798a9f;
+}
+
+.guess-container {
+	display: flex;
+  position: absolute;
+  justify-content: space-between;
+	bottom: 5%;
+	left: 15%;
+	right: 15%;
+	width: calc(100% - 30%);
+}
+.guess-button {
+  
+	width: 100px;
+	height: 40px;
+
+	background: #e1ecf4;
+	border: 1px solid #7aa7c7;
+	border-radius: 3px;
+}
+
+.guess-span {
+width: 144px;
+height: 23px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 23px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+}
+
+input {
+	min-width: 353px;
+  max-width: calc(100% - 144px - 100px);
+  width: 65%;
+	height: 40px;
+
+	background: #ffffff;
+	border: 1px solid #cccccc;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+	border-radius: 3px;
+}

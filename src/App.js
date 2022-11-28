@@ -24,7 +24,7 @@ function App() {
 	const [gameLost, setGameLost] = React.useState(false)
 	const [endGame, setEndGame] = React.useState(false)
   console.log(word)
-  console.log(displayedWord)
+  console.log(`sadsad${displayedWord}`)
 	return (
 		<>
 			<Jogo

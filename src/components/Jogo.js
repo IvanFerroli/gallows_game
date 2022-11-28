@@ -7,7 +7,7 @@ export default function Jogo(props) {
 	const words = props.wordBank;
 	const word = props.word;
 	const spltWord = word ? word.split("") : [];
-	const underlined = spltWord.map(() => " __ ");
+	const underlined = spltWord.map(() => "_ ");
 	const selected = props.selected;
     const setSelected = props.setSelected
     const gameWon = props.gameWon;
@@ -26,7 +26,7 @@ export default function Jogo(props) {
 	}
 	
     function chooseNewWord(){
-        debugger;
+        
             if(gameWon === true)
             {
                 setGameWon(false)
@@ -43,30 +43,33 @@ export default function Jogo(props) {
     errors === 6? (setGameLost(true) && setEndGame(true)) : console.log("nada novo sob o sol")
     gameLost? setEndGame(true) : console.log("nada novo sob o sol")
     gameWon? setEndGame(true) : console.log("nada novo sob o sol")
-    /* gameWon? alert("ganhou") : console.log("nada novo")
-    gameLost? alert("perdeu") : console.log("nada novo") */
+    
     word === joinedDisplayedWord? setGameWon(true) : console.log("nada novo sob o sol")
     console.log(`${word} e ${joinedDisplayedWord}`)
     function wordClass() {
         if(endGame === true && gameWon === true) {
-            return "won"
+            return "word-display won"
         }else if(endGame === true && gameLost === true) {
-            return "lost"
+            return "word-display lost"
         }else{
-            return "game-on"
+            return "word-display game-on"
         }
     }
 
 	return (
 		<div className="game-container">
-			<img src={gallowStage[props.errors]} alt="batata" />
+			<img data-test="game-image" className="main-image" src={gallowStage[props.errors]} alt="batata" />
 			<button
+                data-test="choose-word"
+                data-answer={word}
 				className="start-button"
 				onClick={chooseNewWord}
 			>
 				Escolher palavra
 			</button>
-			<span className={wordClass()}>{endGame ? word : incompleteWord}
+			<span
+            data-test="word"
+            className={wordClass()}>{endGame ? word : incompleteWord}
             </span>
 		</div>
 	);

@@ -8,15 +8,20 @@ export default function Chute(props) {
 
     return(
         <div className="guess-container">
-            <input disabled={
+            <div className="guess-span">Já sei a palavra</div>
+            <input
+            data-test="guess-input"
+            disabled={
 						props.endGame === true ||
 						props.word === null ||
 						props.word === "" ||
                         props.word === undefined 
 							? true
 							: false
-					} placeholder="chutar" value={guess} onChange={e => setGuess(e.target.value)}/>
-            <button disabled={
+					} value={guess} onChange={e => setGuess(e.target.value)}/>
+            <button 
+            data-test="guess=button"
+            className="guess-button" disabled={
 						props.endGame === true ||
 						props.word === null ||
 						props.word === "" ||

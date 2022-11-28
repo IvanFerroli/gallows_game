@@ -14,19 +14,21 @@ export default function Letras(props) {
 	console.log(underlined)
 
 	function selectedLetters(selectedLetter) {
-		
+		var displayed = underlined;
+		debugger;
 		if (!selected.includes(selectedLetter)) {
 			selected.push(selectedLetter);
 			if(spltWord.includes(selectedLetter)){
-				// debugger;
+				debugger;
 				for (let i = 0; i < selected.length; i++) {
 					spltWord.forEach(function(item, index) { if (item === selected[i]) underlined[index] = selected[i];});
 				}
 				
-				const displayed = underlined;
+				displayed = underlined;
 				setDisplayedWord(displayed)	
+				console.log(displayed)
 			}else{
-				setErrors( errors + 1)
+				setErrors( errors + 1)	
 			}
 		}
 	}
@@ -36,6 +38,7 @@ export default function Letras(props) {
 		<div className="letter-container">
 			{letras.map((letra, index) => (
 				<button
+				data-test="letter"
 					disabled={
 						props.endGame === true ||
 						props.word === null ||
@@ -45,7 +48,7 @@ export default function Letras(props) {
 							? true
 							: false
 					}
-					className={`letter ${!selected.includes(letra)? "unselected" : "selected"}`}
+					className={`letter-button ${!selected.includes(letra)? "unselected" : "selected"}`}
 					onClick={() => {
 						selectedLetters(letra);
 					}}
