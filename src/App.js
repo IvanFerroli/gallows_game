@@ -1,3 +1,4 @@
+import React from "react"
 import Chute from "./components/Chute"
 import Jogo from "./components/Jogo"
 import Letras from "./components/Letras"
@@ -15,11 +16,14 @@ const gallowStages = [forca0, forca1, forca2, forca3, forca4, forca5, forca6]
 
 
 function App() {
+  const [errors, setErrors] = React.useState(0)
+  const [word, setWord] = React.useState()
+  const [selected, setSelected] = React.useState([])
   return (
     <>
-      <Jogo image={gallowStages} word={palavras}/>
-      <Letras letra={alfabeto}/>
-      <Chute />
+      <Jogo image={gallowStages} word={word} setWord={setWord} wordBank={palavras} errors={errors} setErrors={setErrors} img={`forca${errors}`}/>
+      <Letras letra={alfabeto} word={word} selected={selected} setSelected={setSelected}/>
+      <Chute word={word}/>
     </>
   );
 }
